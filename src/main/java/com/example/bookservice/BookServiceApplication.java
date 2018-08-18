@@ -21,8 +21,8 @@ public class BookServiceApplication {
   }
 
   private List<Book> bookList =
-      Arrays.asList(new Book[] {new Book(1L, "Baeldung goes to the market", "Tim Schimandle"),
-          new Book(2L, "Baeldung goes to the park", "Slavisa")});
+      Arrays.asList(new Book(1L, "Baeldung goes to the market", "Tim Schimandle"),
+          new Book(2L, "Baeldung goes to the park", "Slavisa"));
 
   @GetMapping("")
   public List<Book> findAllBooks() {
