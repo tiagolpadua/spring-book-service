@@ -33,4 +33,10 @@ public class BookServiceApplication {
   public Book findBook(@PathVariable Long bookId) {
     return bookList.stream().filter(b -> b.getId().equals(bookId)).findFirst().orElse(null);
   }
+  
+  @GetMapping("/slow/{milis}")
+  public List<Book> findBooksSlow(@PathVariable Long milis) throws InterruptedException {
+	  Thread.sleep(milis);
+	  return bookList;
+  }
 }
