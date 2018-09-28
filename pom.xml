@@ -25,6 +25,7 @@
 		<java.version>1.8</java.version>
 		<spring-boot-admin.version>2.0.2</spring-boot-admin.version>
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
+		<keycloak.version>4.2.0.Final</keycloak.version>
 	</properties>
 
 	<dependencies>
@@ -44,16 +45,36 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.keycloak.bom</groupId>
+				<artifactId>keycloak-adapter-bom</artifactId>
+				<version>${keycloak.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
